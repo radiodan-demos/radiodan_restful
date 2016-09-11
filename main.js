@@ -5,7 +5,7 @@ console.log('Radiodan simple restful is awake');
 
 var radiodan = client.create();
 
-var playlist = ["cheer.mp3"];
+var playlist = ["crowd.mp3"];
 
 // Get the player object called `main`
 // as specified in ./config/radiodan-config.json
@@ -90,14 +90,17 @@ web.use('/radiodan',
 // pages
 web.use(express.static(__dirname + '/static'));
 
-web.use('/play',
+web.get('/play',function(req,res){
+  console.log("playing");
   play();
-);
+  res.send('playing');
+});
 
-web.use('/stop',
+web.get('/stop',function(req,res){
+  console.log("stopping");
   stop();
-);
-
+  res.send('stopping');
+});
 
 web.listen(port);
 

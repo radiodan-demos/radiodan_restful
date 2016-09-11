@@ -6,5 +6,9 @@ therefore requires a pi2 / 3 or zero - B+ doesn't work.
 
 Just does play and stop intended to be used via curl.
 
+Installation
+----
+
+    npm install
 
 
